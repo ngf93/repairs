@@ -29,6 +29,7 @@ $transition-slow: .75s ease-in;
     border-bottom-left-radius: $rad;
 }
 
+html {scroll-behavior: smooth;}
 
 p, label, span, a, form, select, div, blockquote, cite, figure, figcaption, ul, ol, dl {
     line-height: normal;
@@ -159,6 +160,18 @@ h6 {
     h3 {font-size: 1.75em;}
     h4 {font-size: 1.35em;}
 }
+@media (max-width: 767px){
+    h1 {font-size: 2.5em;}
+    h4 {font-size: 1.75em;}
+}
+@media (max-width: 575px){
+    h1 {font-size: 2em;}
+    h2 {text-align: center;}
+    h3 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+}
 
 .fs {
     &-08 {font-size: 0.8em;}
@@ -189,7 +202,15 @@ h6 {
     &-9 {font-weight: 900;}
 }
 
-.mb-8 {margin-bottom: 8em;}
+.mb-8 {
+    margin-bottom: 8em;
+    @media (max-width: 767px) {
+        margin-bottom: 6em;
+    }
+    @media (max-width: 575px) {
+        margin-bottom: 4em;
+    }
+}
 
 
 body {
@@ -199,29 +220,35 @@ body {
     position: relative;
     margin: 0px;
     color: $text-color;
+    --header-h: 120px;
+    --footer-h: 100px;
     @media (max-width: 1199px) {
         font-size: 15px;
+        --header-h: 100px;
     }
     @media (max-width: 991px) {
         font-size: 14px;
+        --header-h: 90px;
     }
     @media (max-width: 767px) {
         font-size: 12px;
+        --header-h: 80px;
     }
     @media (max-width: 575px) {
         font-size: 10px;
+        --header-h: 60px;
     }
 }
 
 
 header {
-    height: 120px;
-    @media (max-width: 1199px){
-        height: 100px;
-    }
-    @media (max-width: 991px){
-        height: 90px;
-    }
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #fff;
+    height: var(--header-h);
+    z-index: 1050;
     .logo {
         width: 340px;
         @media (max-width: 1399px){
@@ -229,6 +256,12 @@ header {
         }
         @media (max-width: 1199px) {
             width: 250px;
+        }
+        @media (max-width: 767px) {
+            width: 200px;
+        }
+        @media (max-width: 575px) {
+            width: 170px;
         }
     }
     nav {
@@ -264,10 +297,13 @@ header {
 
 
 main {
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - var(--header-h) - var(--footer-h));
     padding: 3em 0;
     @media (max-width: 1199px){
         padding: 2em 0;
+    }
+    @media (max-width: 575px){
+        padding: 1em 0;
     }
 }
 
@@ -298,6 +334,14 @@ main {
         @media (max-width: 991px){
             height: 500px;
         }
+        @media (max-width: 767px){
+            height: 350px;
+            @include shape(2.5em);
+        }
+        @media (max-width: 575px){
+            height: 60vw;
+            @include shape(1.5em);
+        }
         h1 {
             @include shape(250px);
             background-color: $color-2;
@@ -311,6 +355,15 @@ main {
                 margin-left: -110px;
                 width: calc(50% + 110px);
             }
+            @media (max-width: 767px){
+                padding: 2rem 10% 2rem 160px;
+            }
+            @media (max-width: 575px){
+                @include shape(70px);
+                padding: 1em 2em 1em 75px;
+                margin-left: -50px;
+                width: calc(50% + 50px);
+            }
         }
         img {
             position: absolute;
@@ -320,6 +373,10 @@ main {
             height: 98%;
             @media (max-width: 991px){
                 height: 85%;
+            }
+            @media (max-width: 767px){
+                height: 100%;
+                right: -33%;
             }
         }
     }
@@ -342,6 +399,14 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            @media (max-width: 767px){
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            @media (max-width: 575px){
+                @include shape(1.5em);
+            }
             img {
                 width: 100%;
                 height: 220px;
@@ -350,14 +415,26 @@ main {
                 @media (max-width: 1399px){
                     height: 190px;
                 }
-                @media (max-width: 1399px){
+                @media (max-width: 1199px){
                     height: 160px;
+                }
+                @media (max-width: 767px){
+                    height: 120px;
+                    width: 120px;
+                }
+                @media (max-width: 575px){
+                    height: 80px;
+                    width: 80px;
                 }
             }
             h4 {
                 padding: 0 1em 1em;
                 @media (max-width: 1399px){
                     padding: 0 .5em .5em;
+                }
+                @media (max-width: 767px){
+                    text-align: left;
+                    padding: 0 .5em;
                 }
             }
         }
@@ -378,8 +455,14 @@ main {
                 @media (max-width: 1399px){
                     height: 350px;
                 }
-                @media (max-width: 1399px){
+                @media (max-width: 1199px){
                     height: 300px;
+                }
+                @media (max-width: 767px){
+                    height: 240px;
+                }
+                @media (max-width: 575px){
+                    height: 90vw;
                 }
                 &.img {
                     object-fit: cover;
@@ -420,6 +503,14 @@ main {
         @media (max-width: 991px){
             height: 400px;
         }
+        @media (max-width: 767px){
+            height: 300px;
+            @include shape(3em);
+        }
+        @media (max-width: 575px){
+            height: 55vw;
+            @include shape(1.5em);
+        }
     }
     p {
         font-size: 1.5em;
@@ -447,6 +538,13 @@ main {
         @media (max-width: 991px){
             height: 120px;
         }
+        @media (max-width: 767px){
+            height: 90px;
+            padding: .5em;
+        }
+        @media (max-width: 575px){
+            height: 25vw;
+        }
         &:hover, &:focus {
             filter: grayscale(0);
             opacity: 1;
@@ -464,12 +562,24 @@ main {
     @media (max-width: 1199px){
         padding: 3em;
     }
+    @media (max-width: 767px){
+        @include shape(2em);
+    }
+    @media (max-width: 575px){
+        padding: 2em;
+    }
     .bg-1 {
         position: absolute;
         left: 50%;
         top: 0%;
         height: 100%;
         z-index: 1;
+        @media (max-width: 767px){
+            left: 0%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center bottom;
+        }
     }
     .bg-2 {
         position: absolute;
@@ -495,6 +605,10 @@ main {
         @include shape(2em);
         background-color: #fff;
         padding: 2em;
+        @media (max-width: 575px){
+            @include shape(1.5em);
+            padding: 1.5em 1em ;
+        }
     }
 }
 
@@ -502,5 +616,96 @@ main {
 footer {
     background-color: $text-color;
     color: #fff;
-    height: 100px;
+    height: var(--footer-h);
+    &.mobile {
+        display: none;
+        height: 60px;
+        position: sticky;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+        z-index: 1050;
+        @media (max-width: 991px){
+            display: block;
+        }
+        nav {
+            height: 100%;
+            ul {
+                height: 100%;
+                list-style: none;
+                padding-left: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                a, button {
+                    filter: grayscale(1) brightness(.75);
+                    transition: $transition;
+                    &:hover, &:focus, &:active {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.offcanvas {
+    background-color: #fff;
+    overflow: hidden;
+    height: fit-content !important;
+    &-top {
+        border-radius: 0px 0px 32px 32px;
+        padding-top: var(--header-h);
+    }
+    &-bottom {
+        border-radius: 32px 32px 0px 0px;
+        padding-bottom: 60px;
+    }
+    &-body {
+        padding: 2em 0;
+    }
+    .btn-close {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        background: #F6F6F6;
+        opacity: 1;
+        padding: 0px;
+        @include flex-center();
+        transition: $transition;
+        &:hover {
+            background-color: $color-2;
+        }
+        img {width: 1em;}
+    }
+    nav {
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            li {
+                &:not(:first-child){margin-top: .75em;}
+                a {
+                    background: #F7F7F7;
+                    border-radius: 1rem;
+                    padding: 0 1rem;
+                    font-size: 1.6em;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    height: 60px;
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
