@@ -37,11 +37,115 @@
                 </div>
             </section>
 
+            <section class="mb-8">
+                <h2 class="text-center text-lg-start">Lorem ipsum dolor sit amet</h2>
+                <div class="quiz">
+                    <form id="quiz-slider" class="carousel slide carousel-fade" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <fieldset class="carousel-item active">
+                                <div class="main">
+                                    <legend>Какая у Вас неисправность?</legend>
+                                    <ul class="list-unstyled row row-cols-2 g-2 g-sm-4">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не включается</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Протекает вода</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не сливает</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не греет воду</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не отжимает</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не набирается вода</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Не открывается барабан</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Шумит/прыгает</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="defect" required oninput="verifyInput(this.closest('fieldset'))">
+                                                <span class="ms-2 ms-sm-3">Другое</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bottom">
+                                    <div class="btn-3 me-auto">
+                                        Гарантия от 6 месяцев
+                                        <img src="imgs/icons/shield.png" alt="Гарантия от 6 месяцев">
+                                    </div>
+                                    <button class="next verifiable-btn btn-2" type="button" disabled data-bs-target="#quiz-slider" data-bs-slide="next">
+                                        <span class="me-2">Далее</span>⟶ 
+                                    </button>
+                                </div>
+                            </fieldset>
+                            <fieldset class="carousel-item">
+                                <div class="main">
+                                    <legend>Введите свои контактные данные:</legend>
+                                    <input type="text" placeholder="Ваше имя" class="fs-15 mb-2 mb-sm-4" required oninput="verifyInput(this.closest('fieldset'))">
+                                    <input type="tel" placeholder="Номер телефона" class="fs-15 mb-2 mb-sm-4" required oninput="verifyInput(this.closest('fieldset'))">
+                                    <textarea class="fs-15" rows="6" placeholder="Комментарий"></textarea>
+                                </div>
+                                <div class="bottom">
+                                    <div class="btn-3 me-auto">
+                                        Гарантия от 6 месяцев
+                                        <img src="imgs/icons/shield.png" alt="Гарантия от 6 месяцев">
+                                    </div>
+                                    <button class="prev" type="button" data-bs-target="#quiz-slider" data-bs-slide="prev">
+                                        ⟵
+                                    </button>
+                                    <button class="next verifiable-btn btn-2" type="submit" disabled>
+                                        <span class="me-2">Отправить</span>⟶ 
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                    <aside>
+                        <strong>Гарантия от 6 месяцев</strong>
+                        <img src="imgs/icons/shield.png" alt="Гарантия от 6 месяцев" class="img-fluid d-block mx-auto mt-5">
+                    </aside>
+                </div>
+            </section>
+
             <section class="sec-6 mb-8">
                 <h2 class="text-center">Lorem ipsum dolor sit amet</h2>
                 <ul class="list-unstyled row row-cols-2 g-4">
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не включается</h3>
                             <img src="imgs/icons/icon-on-off.png" alt="Не включается">
                             <p>Повреждён кабель, неправильная работа эл. модулей</p>
@@ -50,7 +154,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Протекает вода</h3>
                             <img src="imgs/icons/icon-water.png" alt="Протекает вода">
                             <p>Износ резиновой манжеты или патрубков, неисправность помпы</p>
@@ -59,7 +163,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не сливает</h3>
                             <img src="imgs/icons/icon-sink.png" alt="Не сливает">
                             <p>Неисправность помпы или датчика воды, засор</p>
@@ -68,7 +172,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не греет воду</h3>
                             <img src="imgs/icons/icon-temperature.png" alt="Не греет воду">
                             <p>Неисправность ТЭНа, температурного датчика</p>
@@ -77,7 +181,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не отжимает</h3>
                             <img src="imgs/icons/icon-spin.png" alt="Не отжимает">
                             <p>Поломка двигателя, износ ремня, неисправность насоса</p>
@@ -86,7 +190,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не набирает воду</h3>
                             <img src="imgs/icons/icon-water2.png" alt="Не набирает воду">
                             <p>Сломался заливной клапан, неисправный датчик уровня воды</p>
@@ -95,7 +199,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Шумит/прыгает</h3>
                             <img src="imgs/icons/icon-noize.png" alt="Шумит/прыгает">
                             <p>Вышел из строя амортизатор, попал посторонний предмет</p>
@@ -104,7 +208,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="box p-5">
+                        <div class="box">
                             <h3>Не открывается дверца</h3>
                             <img src="imgs/icons/icon-washing machine.png" alt="Не открывается дверца">
                             <p>Неисправность устройства блокировки, обрыв провода, сломана ручка</p>
@@ -119,12 +223,12 @@
         <section class="sec-7 mb-8">
             <div class="container">
                 <figure>
-                    <img src="imgs/bg/bg1.jpg" alt="">
+                    <img src="imgs/bg/bg1.jpg" alt="неисправность">
                     <figcaption>
                         <h2 class="white mb-4">Не нашли свою неисправность?</h2>
                         <div class="row">
-                            <div class="col-5 col-xxl-4">
-                                <p class="fs-15 fw-6 mb-5">Оставьте заявку, и наш мастер проконсультирует Вас</p>
+                            <div class="col-md-7 col-lg-5 col-xxl-4">
+                                <p class="fs-15 fw-6 mb-4 mb-md-5">Оставьте заявку, и наш мастер проконсультирует Вас</p>
                                 <button type="button" class="w-100 btn-2 fs-13 fw-7">Оставить заявку</button>
                             </div>
                         </div>
@@ -189,8 +293,9 @@
                     </li>
                 </ul>
                 <div class="row mt-3">
-                    <div class="col-6">
-                        <p class="fs-11">* Точную стоимость ремонта мастер называет только после полной диагностики вашей техники. <br/>Информация в таблице не является офертой.</p>
+                    <div class="col-lg-6">
+                        <button type="button" class="btn-1 fs-14 fw-7 w-100 mb-3 d-lg-none">Проконсультироваться</button>
+                        <p>* Точную стоимость ремонта мастер называет только после полной диагностики вашей техники. <br/>Информация в таблице не является офертой.</p>
                     </div>
                 </div>
             </section>
@@ -198,13 +303,13 @@
             <section class="sec-9 mb-8">
                 <h2 class="text-center">Lorem ipsum dolor sit amet</h2>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="d-none d-lg-block col-6">
                         <div class="box">
                             <img src="imgs/man2.png" alt="Оставьте заявку">
                         </div>
                     </div>
-                    <div class="col-4 offset-1">
-                        <ul class="marked-list fs-15 fw-6">
+                    <div class="col-lg-6 col-xl-5 col-xxl-4 offset-xl-1">
+                        <ul class="marked-list">
                             <li>Оставьте заявку, и наш мастер проконсультирует Вас</li>
                             <li>Оставьте заявку, и наш мастер проконсультирует Вас</li>
                             <li>Оставьте заявку, и наш мастер проконсультирует Вас</li>
@@ -218,19 +323,19 @@
 
         <section class="sec-10 mb-8">
             <img src="imgs/bg/pattern2.svg" alt="pattern" class="pattern">
-            <img src="imgs/bg/man3.png" alt="man" class="man">
             <div class="container">
-                <div class="row justify-content-between align-items-end">
-                    <div class="col-6">
-                        <h2>Lorem ipsum dolor sit</h2>
-                        <p class="fs-15 fw-6 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat non massa dictum sed volutpat. Eget risus, auctor ut nullam ipsum. Ut a mattis bibendum eu ac nunc id morbi. Quis lectus tellus metus in diam, nam sed lectus. Pellentesque duis est velit lacus placerat.</p>
-                        <p class="fs-15 fw-6 mt-4">Varius tellus amet nec viverra adipiscing et justo, morbi urna. Nisi neque, senectus justo, cras diam. Ut vulputate odio tortor, velit, mauris nulla gravida fermentum. Leo nunc neque convallis maecenas ut. Nec risus cras at id proin sed imperdiet duis risus. Eget mattis elementum nullam semper lectus.</p>
-                        <p class="fs-15 fw-6 mt-4">Vel, mi congue euismod habitant ultricies. Aliquet amet, pharetra pellentesque velit ante lacus feugiat posuere. Nullam dignissim dolor eget leo pharetra ut id magna.</p>
+                <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <h2 class="text-center text-lg-start">Lorem ipsum dolor sit</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat non massa dictum sed volutpat. Eget risus, auctor ut nullam ipsum. Ut a mattis bibendum eu ac nunc id morbi. Quis lectus tellus metus in diam, nam sed lectus. Pellentesque duis est velit lacus placerat.</p>
+                        <p>Varius tellus amet nec viverra adipiscing et justo, morbi urna. Nisi neque, senectus justo, cras diam. Ut vulputate odio tortor, velit, mauris nulla gravida fermentum. Leo nunc neque convallis maecenas ut. Nec risus cras at id proin sed imperdiet duis risus. Eget mattis elementum nullam semper lectus.</p>
+                        <p>Vel, mi congue euismod habitant ultricies. Aliquet amet, pharetra pellentesque velit ante lacus feugiat posuere. Nullam dignissim dolor eget leo pharetra ut id magna.</p>
                     </div>
-                    <div class="col-5">
+                    <div class="col-lg-6 col-xl-5 position-relative d-flex flex-column justify-content-end">
+                        <img src="imgs/bg/man3.png" alt="man" class="man">
                         <div class="box">
-                            <div class="fs-17 fw-7 mb-3">Имя Фамилия</div>
-                            <p class="fs-15 fw-5">Nullam dignissim dolor eget leo pharetra ut id magna.</p>
+                            <div class="fs-17 fw-7 mb-2">Имя Фамилия</div>
+                            <p class="fs-15 fw-5 mt-0">Nullam dignissim dolor eget leo pharetra ut id magna.</p>
                         </div>
                     </div>
                 </div>
@@ -242,14 +347,14 @@
             <div class="container">
                 <form action="">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-lg-8">
                             <h2 class="white">Ремонт <span class="color-2">со скидкой до 20%</span> до&nbsp;конца&nbsp;августа</h2>
-                            <div class="row row-cols-2">
+                            <div class="row row-cols-md-2">
                                 <div>
                                     <input type="text" placeholder="Номер телефона" class="fs-13">
                                 </div>
                                 <div>
-                                    <button type="button" class="btn-1 fs-13 fw-7 w-100">Свяжитесь со мной</button>
+                                    <button type="button" class="btn-1 fs-13 fw-7 w-100 mt-3 mt-md-0">Свяжитесь со мной</button>
                                 </div>
                             </div>
                             <p class="fw-5 mt-3">Отправляя данные, вы соглашаетесь с обработкой <a href="/" class="text-decoration-underline fw-7">пернсональных данных</a></p>
@@ -267,22 +372,36 @@
                     <div class="accordion-item">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ans-1" aria-expanded="true">Какие неисправности можно устранить самостоятельно?</button>
                         <div id="ans-1" class="accordion-collapse collapse show" data-bs-parent="#answers">
-                            <p>Самостоятельное устранение неисправностей, не имея должных навыков, чревато неприятными последствиями. Если вы не являетесь специалистом в подобной области, то даже банальный демонтаж-монтаж фильтров может обернуться серьезным потопом. Цель сервиса по ремонту - помочь вам, а не навредить.</p>
+                            <div class="accordion-body">
+                                <p>Самостоятельное устранение неисправностей, не имея должных навыков, чревато неприятными последствиями. Если вы не являетесь специалистом в подобной области, то даже банальный демонтаж-монтаж фильтров может обернуться серьезным потопом. Цель сервиса по ремонту - помочь вам, а не навредить.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ans-2" aria-expanded="false">В каких случаях проводить ремонт нерентабельно, и проще купить новую технику?</button>
                         <div id="ans-2" class="accordion-collapse collapse" data-bs-parent="#answers">
-                            <p>text</p>
+                            <div class="accordion-body">
+                                <p>text</p>
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ans-3" aria-expanded="false">Как правильно ухаживать за стиральной машиной?</button>
                         <div id="ans-3" class="accordion-collapse collapse" data-bs-parent="#answers">
-                            <p>text</p>
+                            <div class="accordion-body">
+                                <p>text</p>
+                            </div>
                         </div>
                     </div>
-                  </div>
+                    <div class="accordion-item">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ans-4" aria-expanded="false">В каких случаях проводить ремонт нерентабельно, и проще купить новую технику?</button>
+                        <div id="ans-4" class="accordion-collapse collapse" data-bs-parent="#answers">
+                            <div class="accordion-body">
+                                <p>text</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
