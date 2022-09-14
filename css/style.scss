@@ -199,7 +199,7 @@ h6 {
 }
 @media (max-width: 575px){
     h1 {font-size: 2em;}
-    h2 {text-align: center;}
+    h2 {font-size: 2em; text-align: center;}
     h3 {
         font-size: 2em;
         margin-bottom: 0.5em;
@@ -383,6 +383,7 @@ main {
             @include shape(250px);
             background-color: $color-2;
             width: calc(50% + 165px);
+            min-width: 75%;
             padding: 4rem 10% 4rem 230px;
             position: relative;
             z-index: 5;
@@ -692,6 +693,12 @@ main {
             grid-template-columns: 1fr;
             grid-template-rows: 3em 80px 3em 2em;
         }
+        @media (max-width: 575px){
+            font-size: 10px;
+            grid-template-rows: 3em 60px 3em 2em;
+            padding: 1.5em;
+            @include shape(2em);
+        }
         h3 {
             grid-column: 1 / 3;
             grid-row: 1 / 2;
@@ -704,6 +711,9 @@ main {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+            }
+            @media (max-width: 575px){
+                font-size: 1.5em;
             }
         }
         img {
@@ -915,6 +925,9 @@ main {
     @media (max-width: 1199px){
         padding: 4em 0;
     }
+    @media (max-width: 575px){
+        padding: 3em 0;
+    }
     figure {
         @include shape(60px);
         overflow: hidden;
@@ -940,9 +953,9 @@ main {
             @media (max-width: 1199px){
                 padding: 3em;
             }
-            // @media (max-width: 767px){
-            //     padding: 2em;
-            // }
+            @media (max-width: 575px){
+                padding: 2em;
+            }
         }
     }
 }
@@ -958,6 +971,10 @@ main {
     @media (max-width: 1199px){
         padding: 3em;
     }
+    @media (max-width: 575px){
+        @include shape(2em);
+        padding: 2em;
+    }
     ul {
         padding-left: 0px;
         list-style: none;
@@ -972,6 +989,9 @@ main {
                 font-size: 1.75em;
                 font-weight: 600;
                 flex:1;
+                display: flex;
+                align-items: baseline;
+                span {flex:1;}
                 @media (max-width: 1399px){
                     font-size: 1.5em;
                 }
@@ -981,11 +1001,11 @@ main {
                 &::before {
                     content: '';
                     display: inline-block;
-                    width: .75rem;
-                    height: .75rem;
+                    width: .5em;
+                    height: .5em;
                     background-color: $color-2;
-                    @include shape(.25rem);
-                    margin-right: 1rem;
+                    @include shape(.15em);
+                    margin-right: .5em;
                 }
             }
             strong {
@@ -1021,16 +1041,24 @@ main {
     li {
         position: relative;
         padding-left: 2.5em;
+        @media (max-width: 991px){
+            padding-left: 2em;
+        }
         &::before {
             content: '';
             display: block;
             position: absolute;
             left: 0px;
             top: 0px;
-            width: 2.5rem;
-            height: 2.5rem;
-            @include shape(1rem);
+            width: 1.6em;
+            height: 1.6em;
+            @include shape(.6em);
             background-color: $color-2;
+            @media (max-width: 991px){
+                width: 1.2em;
+                height: 1.2em;
+                @include shape(.4em);
+            }
         }
         &:not(:first-child){margin-top: 1em;}
     }
@@ -1089,6 +1117,9 @@ main {
             object-fit: contain;
             object-position: center;
         }
+        @media (max-width: 575px){
+            height: 100vw;
+        }
     }
     .man {
         position: absolute;
@@ -1112,6 +1143,9 @@ main {
         }
         @media (max-width: 767px){
             height: 450px;
+        }
+        @media (max-width: 575px){
+            height: 90vw;
         }
     }
     .container {
@@ -1143,6 +1177,9 @@ main {
     @media (max-width: 991px){
         min-height: auto;
     }
+    @media (max-width: 575px){
+        padding: 2em 0;
+    }
     .pattern {
         position: absolute;
         top: 0%;
@@ -1160,6 +1197,10 @@ main {
             padding: 4em;
             color: #fff;
             position: relative;
+            @media (max-width: 575px){
+                @include shape(2em);
+                padding: 2em;
+            }
             .img-item {
                 position: absolute;
                 top: 2em;
@@ -1188,6 +1229,7 @@ main {
         line-height: 140%;
         @media (max-width: 767px){
             padding: 1em 0px;
+            font-size: 1.5em;
         }
         &::after {
             background: url(../imgs/icons/plus.svg) no-repeat center;
@@ -1198,11 +1240,14 @@ main {
             position: absolute;
             bottom: 0px;
             left: 0px;
-            width: 160px;
-            height: 20px;
+            width: 15%;
+            height: .7em;
             background-color: transparent;
             @include shape(4px);
             transition: $transition;
+            @media (max-width: 767px){
+                height: .25em;
+            }
         }
         &:not(.collapsed){
             background-color: transparent;
@@ -1221,6 +1266,9 @@ main {
             p {
                 font-size: 1.3em;
                 font-weight: 500;
+                @media (max-width: 767px){
+                    font-size: 1.2em;
+                }
             }
         }
     }
@@ -1280,23 +1328,6 @@ footer {
     &-body {
         padding: 2em 0;
     }
-    .btn-close {
-        position: absolute;
-        top: 1em;
-        right: 1em;
-        width: 2.5em;
-        height: 2.5em;
-        border-radius: 50%;
-        background: #F6F6F6;
-        opacity: 1;
-        padding: 0px;
-        @include flex-center();
-        transition: $transition;
-        &:hover {
-            background-color: $color-2;
-        }
-        img {width: 1em;}
-    }
     nav {
         ul {
             list-style: none;
@@ -1321,4 +1352,34 @@ footer {
             }
         }
     }
+}
+.btn-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background: #F6F6F6;
+    opacity: 1;
+    padding: 0px;
+    @include flex-center();
+    transition: $transition;
+    &:hover {
+        background-color: $color-2;
+    }
+    img {width: 1em;}
+}
+
+.modal {
+    &-content {
+        background-color: $color-2;
+        padding: 3em;
+        @include shape(60px);
+        @media (max-width: 575px){
+            padding: 1.5em;
+            @include shape(2em);
+        }
+    }
+    &-body {padding: 0px;}
 }

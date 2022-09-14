@@ -22,7 +22,7 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
-            <button type="button" class="d-none d-sm-block btn-1 py-3 fs-13 fw-6">Связаться с нами</button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#callback" class="d-none d-sm-block btn-1 py-3 fs-13 fw-6">Связаться с нами</button>
             <button type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" class="d-lg-none"><img src="imgs/icons/burger.svg" alt="menu"></button>
         </div>
     </header>
@@ -86,7 +86,7 @@
                                 <img src="imgs/icons/icon-2.svg" alt="Ремонт посудомоечных машин" class="icon">
                             </div>
                             <figcaption>
-                                <h3>Ремонт посудомоечных машин</h3>
+                                <h3><a href="dishwasher.html" class="stretched-link">Ремонт посудомоечных машин</a></h3>
                             </figcaption>
                         </figure>
                     </li>
@@ -97,7 +97,7 @@
                                 <img src="imgs/icons/icon-3.svg" alt="Ремонт холодильников" class="icon">
                             </div>
                             <figcaption>
-                                <h3>Ремонт холодильников</h3>
+                                <h3><a href="fridge.html" class="stretched-link">Ремонт холодильников</a></h3>
                             </figcaption>
                         </figure>
                     </li>
@@ -293,6 +293,25 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="callback" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"><img src="imgs/icons/close.svg" alt="close"></button>
+                <div class="modal-body">
+                    <h3 class="text-center">Оставьте заявку</h3>
+                    <form action="">
+                        <input type="text" placeholder="Ваше имя" class="fs-13 mb-2 mb-sm-3">
+                        <input type="tel" placeholder="Номер телефона" class="fs-13 mb-2 mb-sm-3">
+                        <textarea rows="3" placeholder="Комментарий" class="fs-13 mb-2 mb-sm-3"></textarea>
+                        <button type="submit" class="btn-2 w-100 fs-13 fw-7">Отправить</button>
+                        <p class="mt-2 mt-sm-3 text-center fw-5">Отправляя данные, вы соглашаетесь с обработкой <a href="/" class="fw-7 text-decoration-underline">персональных данных</a></p>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
